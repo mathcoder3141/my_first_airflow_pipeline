@@ -1,0 +1,15 @@
+- id: Database assigned.
+- city: City Name.
+- county: Country code.
+- latitude: City geo location, latitude.
+- longitude: City geo location, longitude.
+- sunrise: Sunrist time, UNIX, UTC.
+- sunset: Sunset time, UNIX, UTC.
+- wind_speed: Wind speed in meter/sec.
+- humidity: Humidity, %.
+- pressure: Atmospheric pressure in hPa.
+- min_temp: Minimum temerature of the moment. Units in Kelvin.
+- max_temp: Maximum temerature of the moment. Units in Kelvin.
+- temp: Temperature in Kelvin..
+- weather: Weather condition within the group.
+- created: Time of data collection, CT.
