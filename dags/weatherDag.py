@@ -1,9 +1,9 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
-from airflow.operators import PythonOperator
+from airflow.operators.python_operator import PythonOperator
 import os
-from airflow.hooks import PostgresHook
+from airflow.hooks.postgres_hook import PostgresHook
 import json
 import numpy as np
 
@@ -15,7 +15,7 @@ def load_data(**kwargs):
     pg_hook = PostgresHook(postgres_conn_id='weather_id')
 
     file_name = str(datetime.now().date()) + '.json'
-    tot_name = os.path.join(os.path.dirname(__file__), 'src', file_name)
+    tot_name = os.path.join(os.path.dirname(__file__), 'src/data', file_name)
 
     with open(tot_name, 'r') as inputfile:
         doc = json.load(inputfile)
