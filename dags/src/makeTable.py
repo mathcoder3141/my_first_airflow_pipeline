@@ -2,14 +2,16 @@ from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 import psycopg2
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def make_database():
     """
     Make the Postgres database and creates the table
     """
 
-    pwd = 'postgres'
-    dbname    = "weatherdb"
+    pwd = os.getenv('pwd')
+    dbname    = 'weatherdb'
     tablename = 'dallas_weather'
 
     engine = create_engine('postgresql+psycopg2://postgres:%s@localhost:5432/%s'%(pwd, dbname))
